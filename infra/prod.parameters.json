@@ -1,6 +1,7 @@
 {
   "Parameters": {
     "Environment": "prod",
-    "DynamoDbTableName": "tbes_cursos"
+    "DynamoDbTableName": "tbes_cursos",
+    "DeletionProtectionEnabled": true
   }
 }
