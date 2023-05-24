@@ -16,8 +16,6 @@ module "dynamodb_table" {
     }
   ]
 
-  create_table = false
-
   tags = {
     Name         = var.nome_tabela,
     Microservice = "Cursos",
