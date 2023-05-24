@@ -2,8 +2,8 @@
   "Parameters": {
     "Environment": "dev",
     "DynamoDbTableName": "tbes_cursos_dev",
-    "RCU": "0.5",
-    "WCU": "0.5",
+    "RCU": "1",
+    "WCU": "1",
     "BillingMode": "PROVISIONED"
   }
 }
