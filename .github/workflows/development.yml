@@ -45,7 +45,7 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: Create pull request
-        run: gh pr create -B main -H development --title 'Moving to production' --body 'Pull request to move to production'
+        run: gh pr create -B main -H development --title 'Moving to production' --body 'Pull request to move to production' || true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
