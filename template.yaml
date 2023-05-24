@@ -42,7 +42,7 @@ Resources:
       ProvisionedThroughput: 
         ReadCapacityUnits: !Ref RCU
         WriteCapacityUnits: !Ref WCU
-      TableName: DynamoDbTableName
+      TableName: !Ref DynamoDbTableName
       Tags: 
       - Key: Ambiente
         Value: !Ref Environment
