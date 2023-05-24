@@ -1,0 +1,54 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: escoladesoftware_cursos_dynamodb
+Parameters:
+  DynamoDbTableName:
+    Description: Table Name
+    Type: String
+    Default: tbes_cursos
+  Environment:
+    Description: Environment
+    Type: String
+    Default: "dev"
+  RCU:
+    Description: Read Capacity Unit
+    Type: String
+    Default: "0"
+  WCU:
+    Description: Write Capacity Unit
+    Type: String
+    Default: "0"
+  BillingMode:
+    Description: Billing Mode
+    Type: String
+    Default: "PAY_PER_REQUEST"
+  DeletionProtectionEnabled:
+    Description: Deletion protection
+    Type: String
+    Default: "false"
+
+Resources:
+  CursosDynamoDb:
+    Type: AWS::DynamoDB::Table
+    Properties: 
+      AttributeDefinitions: 
+      - AttributeName: "categoria"
+        AttributeType: "S"
+      - AttributeName: "nome"
+        AttributeType: "S"
+      BillingMode: !Ref BillingMode
+      DeletionProtectionEnabled: !Ref DeletionProtectionEnabled
+      KeySchema: 
+        - AttributeName: "categoria"
+          KeyType: "HASH"
+        - AttributeName: "nome"
+          KeyType: "RANGE"
+      ProvisionedThroughput: 
+        ReadCapacityUnits: !Ref RCU
+        WriteCapacityUnits: !Ref WCU
+      TableName: !Ref DynamoDbTableName
+      Tags: 
+      - Key: Ambiente
+        Value: !Ref Environment
+      - Key: Microservico
+        Value: Cursos

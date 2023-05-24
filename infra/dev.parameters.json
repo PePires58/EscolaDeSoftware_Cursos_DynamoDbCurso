@@ -1,0 +1,9 @@
+{
+  "Parameters": {
+    "Environment": "dev",
+    "DynamoDbTableName": "tbes_cursos_dev",
+    "RCU": "1",
+    "WCU": "1",
+    "BillingMode": "PROVISIONED"
+  }
+}
