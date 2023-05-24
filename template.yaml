@@ -24,8 +24,8 @@ Parameters:
     Default: "PAY_PER_REQUEST"
   DeletionProtectionEnabled:
     Description: Deletion protection
-    Type: Boolean
-    Default: false
+    Type: String
+    Default: "false"
 
 Resources:
   CursosDynamoDb:
