@@ -17,6 +17,8 @@ module "dynamodb_table" {
   ]
 
   tags = {
-    Name = var.nome_tabela
+    Name         = var.nome_tabela,
+    Microservice = "Cursos",
+    Ambiente     = var.ambiente
   }
 }
