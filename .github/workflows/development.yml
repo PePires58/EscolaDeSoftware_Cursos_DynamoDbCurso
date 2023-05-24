@@ -30,7 +30,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY:  ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Terraform Apply
-        run: cd terraform && terraform apply plan.tf -var-file="variables/development.tfvars" -auto-approve
+        run: cd terraform && terraform apply -var-file="variables/development.tfvars" -auto-approve
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           AWS_ACCESS_KEY_ID:  ${{ secrets.AWS_ACCESS_KEY_ID }}
